@@ -18,6 +18,24 @@ const router = new VueRouter({
             component: {
                 template: '<div>Component home</div>'
             }
+        },
+        {
+            path: '/nosotros',
+            component: {
+                template: '<div>Component nosotros</div>'
+            }
+        },
+        {
+            path: '/archivo',
+            component: {
+                template: '<div>Component archivo</div>'
+            }
+        },
+        {
+            path: '/contacto',
+            component: {
+                template: '<div>Component contacto</div>'
+            }
         }
     ]
 });
