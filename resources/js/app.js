@@ -7,38 +7,7 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-
-Vue.use(VueRouter);
-
-const router = new VueRouter({
-    routes: [
-        {
-            path: '/home',
-            component: {
-                template: '<div>Component home</div>'
-            }
-        },
-        {
-            path: '/nosotros',
-            component: {
-                template: '<div>Component nosotros</div>'
-            }
-        },
-        {
-            path: '/archivo',
-            component: {
-                template: '<div>Component archivo</div>'
-            }
-        },
-        {
-            path: '/contacto',
-            component: {
-                template: '<div>Component contacto</div>'
-            }
-        }
-    ]
-});
+import router from './routes';
 
 /**
  * The following block of code may be used to automatically register your
