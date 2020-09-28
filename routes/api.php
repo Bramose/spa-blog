@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('posts', [PagesController::class, 'home']);
+Route::get('posts', 'App\Http\Controllers\PagesController@home');
+Route::get('blog/{post}', 'App\Http\Controllers\PostController@show');
+Route::get('categorias/{category}', 'App\Http\Controllers\CategoryController@show');

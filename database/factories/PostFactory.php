@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Carbon\Carbon;
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -34,7 +35,9 @@ class PostFactory extends Factory
             'title'         =>  $title,
             'url'           =>  Str::slug($title, '-'),
             'excerpt'       =>  $this->faker->text(200),
-            'published_at'  =>  $date->addWeeks(rand(1, 52))->format('Y-m-d')
+            'body'          =>  $this->faker->text,
+            'published_at'  =>  $date->addWeeks(rand(1, 52))->format('Y-m-d'),
+            'category_id'   =>  Category::inRandomOrder()->first()
         ];
     }
 }

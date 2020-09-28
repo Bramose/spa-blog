@@ -15,8 +15,18 @@ class Post extends Model
 
     protected $appends = ['published_date'];
 
+    public function getRouteKeyName()
+    {
+        return 'url';
+    }
+
     public function getPublishedDateAttribute()
     {
         return optional($this->published_at)->format('M d');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
